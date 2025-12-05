@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ImagePopup from '$lib/components/ImagePopup.svelte';
-
 	// Dashboard page
 </script>
 
