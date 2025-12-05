@@ -1,7 +1,11 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
+	// Landing page
 </script>
 
-<Button>Test Shadcn Button</Button>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<main>
+	<h1>Landing Page</h1>
+	<nav>
+		<a href="/login">Login</a>
+		<a href="/dashboard">Dashboard</a>
+	</nav>
+</main>
