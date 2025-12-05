@@ -3,6 +3,7 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { db } from '$lib/server/db';
 import * as schema from '$lib/server/db/schema';
 import { env } from '$env/dynamic/private';
+import { dev } from '$app/environment';
 
 export const auth = betterAuth({
 	database: drizzleAdapter(db, {
@@ -14,8 +15,8 @@ export const auth = betterAuth({
 			verification: schema.verification
 		}
 	}),
-	secret: env.BETTER_AUTH_SECRET,
-	baseURL: env.BETTER_AUTH_BASE_URL,
+	secret: env.BETTER_AUTH_SECRET || (dev ? 'dev-secret-change-in-production' : ''),
+	baseURL: env.BETTER_AUTH_BASE_URL || (dev ? 'http://localhost:5173' : ''),
 	emailAndPassword: {
 		enabled: true,
 		requireEmailVerification: false
